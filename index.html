@@ -131,6 +131,7 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
     "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Сергей"</span></span>,
+    "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value"><span class="hljs-string">"https://example.com"</span></span>,
     "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-25T23:23:23"</span></span>,
     "<span class="hljs-attribute">facebook_id</span>": <span class="hljs-value"><span class="hljs-string">"123456"</span></span>,
     "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
@@ -154,6 +155,10 @@
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя пользователя"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображение профиля пользователя"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время завершения проверки пользователя. если установлен, значит пользователь подтвредил телефон и он может пользоваться Palms."</span>
@@ -171,6 +176,7 @@
         <span class="hljs-string">"id"</span>,
         <span class="hljs-string">"phone_number"</span>,
         <span class="hljs-string">"name"</span>,
+        <span class="hljs-string">"profile_picture"</span>,
         <span class="hljs-string">"verified_at"</span>,
         <span class="hljs-string">"facebook_id"</span>,
         <span class="hljs-string">"has_password"</span>
@@ -179,7 +185,8 @@
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="пользователь-изменить-данные-пользователя" class="resource"><h3 class="resource-heading">Изменить данные пользователя <a href="#пользователь-изменить-данные-пользователя" class="permalink">&nbsp;&para;</a></h3><div id="пользователь-изменить-данные-пользователя-patch" class="action patch"><h4 class="action-heading"><div class="name">Изменить данные пользователя</div><a href="#пользователь-изменить-данные-пользователя-patch" class="method patch">PATCH</a><code class="uri">/user/me</code></h4><h4>Example URI</h4><div class="definition"><span class="method patch">PATCH</span>&nbsp;<span class="uri"><span class="hostname">https://api.palms.tennis/v1</span>/user/me</span></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer XXXXX</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Иван"</span>
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Иван"</span></span>,
+  "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value"><span class="hljs-string">"data:base64:Asdasda"</span>
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
   "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -187,6 +194,10 @@
     "<span class="hljs-attribute">name</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"новое имя пользователя"</span>
+    </span>}</span>,
+    "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"закодированое base64 изображение профиля пользователя"</span>
     </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
@@ -194,6 +205,7 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
     "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Сергей"</span></span>,
+    "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value"><span class="hljs-string">"https://example.com"</span></span>,
     "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-25T23:23:23"</span></span>,
     "<span class="hljs-attribute">facebook_id</span>": <span class="hljs-value"><span class="hljs-string">"123456"</span></span>,
     "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
@@ -217,6 +229,10 @@
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя пользователя"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображение профиля пользователя"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время завершения проверки пользователя. если установлен, значит пользователь подтвредил телефон и он может пользоваться Palms."</span>
@@ -234,6 +250,7 @@
         <span class="hljs-string">"id"</span>,
         <span class="hljs-string">"phone_number"</span>,
         <span class="hljs-string">"name"</span>,
+        <span class="hljs-string">"profile_picture"</span>,
         <span class="hljs-string">"verified_at"</span>,
         <span class="hljs-string">"facebook_id"</span>,
         <span class="hljs-string">"has_password"</span>
@@ -257,6 +274,7 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
     "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Сергей"</span></span>,
+    "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value"><span class="hljs-string">"https://example.com"</span></span>,
     "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-25T23:23:23"</span></span>,
     "<span class="hljs-attribute">facebook_id</span>": <span class="hljs-value"><span class="hljs-string">"123456"</span></span>,
     "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
@@ -280,6 +298,10 @@
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя пользователя"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображение профиля пользователя"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время завершения проверки пользователя. если установлен, значит пользователь подтвредил телефон и он может пользоваться Palms."</span>
@@ -297,6 +319,7 @@
         <span class="hljs-string">"id"</span>,
         <span class="hljs-string">"phone_number"</span>,
         <span class="hljs-string">"name"</span>,
+        <span class="hljs-string">"profile_picture"</span>,
         <span class="hljs-string">"verified_at"</span>,
         <span class="hljs-string">"facebook_id"</span>,
         <span class="hljs-string">"has_password"</span>
@@ -377,6 +400,7 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
     "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Сергей"</span></span>,
+    "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value"><span class="hljs-string">"https://example.com"</span></span>,
     "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-25T23:23:23"</span></span>,
     "<span class="hljs-attribute">facebook_id</span>": <span class="hljs-value"><span class="hljs-string">"123456"</span></span>,
     "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
@@ -400,6 +424,10 @@
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя пользователя"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображение профиля пользователя"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время завершения проверки пользователя. если установлен, значит пользователь подтвредил телефон и он может пользоваться Palms."</span>
@@ -417,6 +445,7 @@
         <span class="hljs-string">"id"</span>,
         <span class="hljs-string">"phone_number"</span>,
         <span class="hljs-string">"name"</span>,
+        <span class="hljs-string">"profile_picture"</span>,
         <span class="hljs-string">"verified_at"</span>,
         <span class="hljs-string">"facebook_id"</span>,
         <span class="hljs-string">"has_password"</span>
@@ -443,6 +472,7 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
     "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Сергей"</span></span>,
+    "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value"><span class="hljs-string">"https://example.com"</span></span>,
     "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-25T23:23:23"</span></span>,
     "<span class="hljs-attribute">facebook_id</span>": <span class="hljs-value"><span class="hljs-string">"123456"</span></span>,
     "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
@@ -466,6 +496,10 @@
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя пользователя"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображение профиля пользователя"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время завершения проверки пользователя. если установлен, значит пользователь подтвредил телефон и он может пользоваться Palms."</span>
@@ -483,6 +517,7 @@
         <span class="hljs-string">"id"</span>,
         <span class="hljs-string">"phone_number"</span>,
         <span class="hljs-string">"name"</span>,
+        <span class="hljs-string">"profile_picture"</span>,
         <span class="hljs-string">"verified_at"</span>,
         <span class="hljs-string">"facebook_id"</span>,
         <span class="hljs-string">"has_password"</span>
@@ -547,6 +582,7 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
     "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
     "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Сергей"</span></span>,
+    "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value"><span class="hljs-string">"https://example.com"</span></span>,
     "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-25T23:23:23"</span></span>,
     "<span class="hljs-attribute">facebook_id</span>": <span class="hljs-value"><span class="hljs-string">"123456"</span></span>,
     "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
@@ -570,6 +606,10 @@
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя пользователя"</span>
         </span>}</span>,
+        "<span class="hljs-attribute">profile_picture</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображение профиля пользователя"</span>
+        </span>}</span>,
         "<span class="hljs-attribute">verified_at</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время завершения проверки пользователя. если установлен, значит пользователь подтвредил телефон и он может пользоваться Palms."</span>
@@ -587,6 +627,7 @@
         <span class="hljs-string">"id"</span>,
         <span class="hljs-string">"phone_number"</span>,
         <span class="hljs-string">"name"</span>,
+        <span class="hljs-string">"profile_picture"</span>,
         <span class="hljs-string">"verified_at"</span>,
         <span class="hljs-string">"facebook_id"</span>,
         <span class="hljs-string">"has_password"</span>
@@ -1230,7 +1271,13 @@
       "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
         "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-      </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>
+      ]
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -1270,7 +1317,13 @@
       "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
         "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-      </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>
+      ]
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -1310,7 +1363,13 @@
       "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
         "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-      </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>
+      ]
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -1445,6 +1504,10 @@
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
             </span>}
           </span>}
         </span>},
@@ -1547,6 +1610,10 @@
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
             </span>}
           </span>}
         </span>},
@@ -1649,6 +1716,10 @@
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
             </span>}
           </span>}
         </span>}
@@ -1695,7 +1766,13 @@
     "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
       "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-    </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+      <span class="hljs-string">"https://domain.com"</span>,
+      <span class="hljs-string">"https://domain.com"</span>,
+      <span class="hljs-string">"https://domain.com"</span>,
+      <span class="hljs-string">"https://domain.com"</span>
+    ]
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -1800,6 +1877,10 @@
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -1822,7 +1903,8 @@
         <span class="hljs-string">"areas"</span>,
         <span class="hljs-string">"options"</span>,
         <span class="hljs-string">"features"</span>,
-        <span class="hljs-string">"coordinates"</span>
+        <span class="hljs-string">"coordinates"</span>,
+        <span class="hljs-string">"images"</span>
       ]</span>,
       "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>}
@@ -1925,7 +2007,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
       "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -1985,7 +2073,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
       "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -2045,7 +2139,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
       "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -2250,6 +2350,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -2430,6 +2534,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -2610,6 +2718,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -2684,7 +2796,13 @@
       "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
         "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-      </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
     "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -2859,6 +2977,10 @@
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -2958,7 +3080,13 @@
           "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
             "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-          </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>
+          ]
         </span>}</span>,
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -3016,7 +3144,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -3097,7 +3231,13 @@
           "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
             "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-          </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>
+          ]
         </span>}</span>,
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -3155,7 +3295,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -3386,6 +3532,10 @@
                         </span>}
                       </span>}</span>,
                       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -3565,6 +3715,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
@@ -3838,6 +3992,10 @@
                         </span>}
                       </span>}</span>,
                       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -4017,6 +4175,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
@@ -4179,7 +4341,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
       "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -4237,7 +4405,13 @@
       "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
         "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-      </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -4438,6 +4612,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -4617,6 +4795,10 @@
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
@@ -4816,7 +4998,13 @@
           "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
             "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-          </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>
+          ]
         </span>}</span>,
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -4874,7 +5062,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -4955,7 +5149,13 @@
           "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
             "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-          </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>
+          ]
         </span>}</span>,
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -5013,7 +5213,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -5245,6 +5451,10 @@
                         </span>}
                       </span>}</span>,
                       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -5424,6 +5634,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
@@ -5697,6 +5911,10 @@
                         </span>}
                       </span>}</span>,
                       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -5876,6 +6094,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
@@ -6064,7 +6286,13 @@
           "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
             "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-          </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>
+          ]
         </span>}</span>,
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -6122,7 +6350,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -6203,7 +6437,13 @@
           "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
             "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-          </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>
+          ]
         </span>}</span>,
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -6261,7 +6501,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -6342,7 +6588,13 @@
           "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
             "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-          </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>
+          ]
         </span>}</span>,
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -6400,7 +6652,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -6481,7 +6739,13 @@
           "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
             "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
             "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-          </span>}
+          </span>}</span>,
+          "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>,
+            <span class="hljs-string">"https://domain.com"</span>
+          ]
         </span>}</span>,
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -6539,7 +6803,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -6770,6 +7040,10 @@
                         </span>}
                       </span>}</span>,
                       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -6949,6 +7223,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
@@ -7222,6 +7500,10 @@
                         </span>}
                       </span>}</span>,
                       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -7401,6 +7683,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
@@ -7674,6 +7960,10 @@
                         </span>}
                       </span>}</span>,
                       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -7853,6 +8143,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
@@ -8126,6 +8420,10 @@
                         </span>}
                       </span>}</span>,
                       "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -8305,6 +8603,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
@@ -8527,7 +8829,13 @@
         "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
           "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-        </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>,
+          <span class="hljs-string">"https://domain.com"</span>
+        ]
       </span>}</span>,
       "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span></span>,
       "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-23T12:23:23+00:00Z"</span>
@@ -8585,7 +8893,13 @@
       "<span class="hljs-attribute">coordinates</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-string">"50.26421"</span></span>,
         "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-string">"30.31432"</span>
-      </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">images</span>": <span class="hljs-value">[
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>,
+        <span class="hljs-string">"https://domain.com"</span>
+      ]
     </span>}</span>,
     "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -8786,6 +9100,10 @@
                     </span>}
                   </span>}</span>,
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"корт, к которому относится слот"</span>
@@ -8965,6 +9283,10 @@
                 </span>}
               </span>}</span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"координаты клуба"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">images</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"изображения клуба"</span>
             </span>}
           </span>}</span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"клуб бронирования"</span>
