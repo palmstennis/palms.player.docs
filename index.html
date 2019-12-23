@@ -10428,7 +10428,28 @@
       "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
     </span>}</span>,
     "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
-    "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span>
+    "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
+    "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"AUTH"</span></span>,
+      "<span class="hljs-attribute">checkout_url</span>": <span class="hljs-value"><span class="hljs-string">"https://fondy.com/checkout_url"</span></span>,
+      "<span class="hljs-attribute">ipsp_id</span>": <span class="hljs-value"><span class="hljs-string">"ipsp_id_eg_1"</span></span>,
+      "<span class="hljs-attribute">ipsp_type</span>": <span class="hljs-value"><span class="hljs-string">"fondy"</span></span>,
+      "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-number">120</span></span>,
+      "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"UAH"</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"CREATED"</span></span>,
+      "<span class="hljs-attribute">card</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">mask</span>": <span class="hljs-value"><span class="hljs-string">"443322*1234"</span></span>,
+        "<span class="hljs-attribute">bin</span>": <span class="hljs-value"><span class="hljs-string">"443322"</span></span>,
+        "<span class="hljs-attribute">user_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">expires_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+      "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+      "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
+    </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -10523,6 +10544,99 @@
         "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количство дней действительности абонемента"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"внутренний идентификатор платежа в системе Palms"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                <span class="hljs-string">"AUTH"</span>,
+                <span class="hljs-string">"PAYMENT"</span>,
+                <span class="hljs-string">"AUTH"</span>
+              ]</span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тип платежа"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">checkout_url</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"адрес страницы Fondy IPSP для добавления новой карты"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">ipsp_id</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"идентификатор платежа в платежном шлюзе"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">ipsp_type</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"название IPSP через которых проводился платеж"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">amount</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"сумма платежа в копейках/центах без разделителей. 120 - 1 грн 20 коп"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">currency</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"валюта платежа"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                <span class="hljs-string">"CREATED"</span>,
+                <span class="hljs-string">"PROCESSING"</span>,
+                <span class="hljs-string">"DECLINED"</span>,
+                <span class="hljs-string">"APPROVED"</span>,
+                <span class="hljs-string">"EXPIRED"</span>,
+                <span class="hljs-string">"REVERSED"</span>,
+                <span class="hljs-string">"CREATED"</span>
+              ]</span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"статус транзакции"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">card</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"внутренний идентификатор карты в системе Palms"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">mask</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"маска номера карты (Fondy.masked_card)"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">bin</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"бин номер карты (Fondy.card_bin)"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">user_id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ID пользователя - владельца карты\n\n&lt;!-- + token: `da39a3ee5e6b4b0d3255bfef95601890afd80709` (string) - токен карты в IPSP (Fondy.rectoken) --&gt;"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">expires_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время жизни карты (Fondy.rectoken_lifetime)"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата добавления карты\n\n&lt;!-- + deleted_at: `2019-08-10T00:00:00` (string) - дата удаления карты --&gt;"</span>
+                </span>}
+              </span>}</span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"карта с которой была проведена оплата"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата создание платежная"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата совершения платежа"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"последняя дата обновления платежа"</span>
+            </span>}
+          </span>}
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -10530,7 +10644,8 @@
         <span class="hljs-string">"subscription"</span>,
         <span class="hljs-string">"user"</span>,
         <span class="hljs-string">"games_number"</span>,
-        <span class="hljs-string">"validity_period"</span>
+        <span class="hljs-string">"validity_period"</span>,
+        <span class="hljs-string">"payment"</span>
       ]</span>,
       "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>}
@@ -10592,7 +10707,28 @@
         "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
       </span>}</span>,
       "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
-      "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span>
+      "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
+      "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"AUTH"</span></span>,
+        "<span class="hljs-attribute">checkout_url</span>": <span class="hljs-value"><span class="hljs-string">"https://fondy.com/checkout_url"</span></span>,
+        "<span class="hljs-attribute">ipsp_id</span>": <span class="hljs-value"><span class="hljs-string">"ipsp_id_eg_1"</span></span>,
+        "<span class="hljs-attribute">ipsp_type</span>": <span class="hljs-value"><span class="hljs-string">"fondy"</span></span>,
+        "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-number">120</span></span>,
+        "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"UAH"</span></span>,
+        "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"CREATED"</span></span>,
+        "<span class="hljs-attribute">card</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">mask</span>": <span class="hljs-value"><span class="hljs-string">"443322*1234"</span></span>,
+          "<span class="hljs-attribute">bin</span>": <span class="hljs-value"><span class="hljs-string">"443322"</span></span>,
+          "<span class="hljs-attribute">user_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">expires_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+          "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+        "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
+      </span>}
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -10638,7 +10774,28 @@
         "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
       </span>}</span>,
       "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
-      "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span>
+      "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
+      "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"AUTH"</span></span>,
+        "<span class="hljs-attribute">checkout_url</span>": <span class="hljs-value"><span class="hljs-string">"https://fondy.com/checkout_url"</span></span>,
+        "<span class="hljs-attribute">ipsp_id</span>": <span class="hljs-value"><span class="hljs-string">"ipsp_id_eg_1"</span></span>,
+        "<span class="hljs-attribute">ipsp_type</span>": <span class="hljs-value"><span class="hljs-string">"fondy"</span></span>,
+        "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-number">120</span></span>,
+        "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"UAH"</span></span>,
+        "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"CREATED"</span></span>,
+        "<span class="hljs-attribute">card</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">mask</span>": <span class="hljs-value"><span class="hljs-string">"443322*1234"</span></span>,
+          "<span class="hljs-attribute">bin</span>": <span class="hljs-value"><span class="hljs-string">"443322"</span></span>,
+          "<span class="hljs-attribute">user_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">expires_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+          "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+        "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+        "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
+      </span>}
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -10763,6 +10920,99 @@
             "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количство дней действительности абонемента"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"внутренний идентификатор платежа в системе Palms"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"AUTH"</span>,
+                    <span class="hljs-string">"PAYMENT"</span>,
+                    <span class="hljs-string">"AUTH"</span>
+                  ]</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тип платежа"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">checkout_url</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"адрес страницы Fondy IPSP для добавления новой карты"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">ipsp_id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"идентификатор платежа в платежном шлюзе"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">ipsp_type</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"название IPSP через которых проводился платеж"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">amount</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"сумма платежа в копейках/центах без разделителей. 120 - 1 грн 20 коп"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">currency</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"валюта платежа"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"CREATED"</span>,
+                    <span class="hljs-string">"PROCESSING"</span>,
+                    <span class="hljs-string">"DECLINED"</span>,
+                    <span class="hljs-string">"APPROVED"</span>,
+                    <span class="hljs-string">"EXPIRED"</span>,
+                    <span class="hljs-string">"REVERSED"</span>,
+                    <span class="hljs-string">"CREATED"</span>
+                  ]</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"статус транзакции"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">card</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"внутренний идентификатор карты в системе Palms"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">mask</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"маска номера карты (Fondy.masked_card)"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">bin</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"бин номер карты (Fondy.card_bin)"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">user_id</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ID пользователя - владельца карты\n\n&lt;!-- + token: `da39a3ee5e6b4b0d3255bfef95601890afd80709` (string) - токен карты в IPSP (Fondy.rectoken) --&gt;"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">expires_at</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время жизни карты (Fondy.rectoken_lifetime)"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата добавления карты\n\n&lt;!-- + deleted_at: `2019-08-10T00:00:00` (string) - дата удаления карты --&gt;"</span>
+                    </span>}
+                  </span>}</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"карта с которой была проведена оплата"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата создание платежная"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата совершения платежа"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"последняя дата обновления платежа"</span>
+                </span>}
+              </span>}
             </span>}
           </span>}
         </span>},
@@ -10855,6 +11105,99 @@
             "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количство дней действительности абонемента"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"внутренний идентификатор платежа в системе Palms"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"AUTH"</span>,
+                    <span class="hljs-string">"PAYMENT"</span>,
+                    <span class="hljs-string">"AUTH"</span>
+                  ]</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тип платежа"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">checkout_url</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"адрес страницы Fondy IPSP для добавления новой карты"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">ipsp_id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"идентификатор платежа в платежном шлюзе"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">ipsp_type</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"название IPSP через которых проводился платеж"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">amount</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"сумма платежа в копейках/центах без разделителей. 120 - 1 грн 20 коп"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">currency</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"валюта платежа"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                    <span class="hljs-string">"CREATED"</span>,
+                    <span class="hljs-string">"PROCESSING"</span>,
+                    <span class="hljs-string">"DECLINED"</span>,
+                    <span class="hljs-string">"APPROVED"</span>,
+                    <span class="hljs-string">"EXPIRED"</span>,
+                    <span class="hljs-string">"REVERSED"</span>,
+                    <span class="hljs-string">"CREATED"</span>
+                  ]</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"статус транзакции"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">card</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+                  "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                    "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"внутренний идентификатор карты в системе Palms"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">mask</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"маска номера карты (Fondy.masked_card)"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">bin</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"бин номер карты (Fondy.card_bin)"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">user_id</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ID пользователя - владельца карты\n\n&lt;!-- + token: `da39a3ee5e6b4b0d3255bfef95601890afd80709` (string) - токен карты в IPSP (Fondy.rectoken) --&gt;"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">expires_at</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время жизни карты (Fondy.rectoken_lifetime)"</span>
+                    </span>}</span>,
+                    "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
+                      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата добавления карты\n\n&lt;!-- + deleted_at: `2019-08-10T00:00:00` (string) - дата удаления карты --&gt;"</span>
+                    </span>}
+                  </span>}</span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"карта с которой была проведена оплата"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата создание платежная"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата совершения платежа"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"последняя дата обновления платежа"</span>
+                </span>}
+              </span>}
             </span>}
           </span>}
         </span>}
@@ -10907,7 +11250,28 @@
       "<span class="hljs-attribute">has_password</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
     </span>}</span>,
     "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
-    "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span>
+    "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
+    "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
+      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"AUTH"</span></span>,
+      "<span class="hljs-attribute">checkout_url</span>": <span class="hljs-value"><span class="hljs-string">"https://fondy.com/checkout_url"</span></span>,
+      "<span class="hljs-attribute">ipsp_id</span>": <span class="hljs-value"><span class="hljs-string">"ipsp_id_eg_1"</span></span>,
+      "<span class="hljs-attribute">ipsp_type</span>": <span class="hljs-value"><span class="hljs-string">"fondy"</span></span>,
+      "<span class="hljs-attribute">amount</span>": <span class="hljs-value"><span class="hljs-number">120</span></span>,
+      "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"UAH"</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"CREATED"</span></span>,
+      "<span class="hljs-attribute">card</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">mask</span>": <span class="hljs-value"><span class="hljs-string">"443322*1234"</span></span>,
+        "<span class="hljs-attribute">bin</span>": <span class="hljs-value"><span class="hljs-string">"443322"</span></span>,
+        "<span class="hljs-attribute">user_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">expires_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+        "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+      "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
+      "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
+    </span>}
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -11002,6 +11366,99 @@
         "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количство дней действительности абонемента"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">payment</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"внутренний идентификатор платежа в системе Palms"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                <span class="hljs-string">"AUTH"</span>,
+                <span class="hljs-string">"PAYMENT"</span>,
+                <span class="hljs-string">"AUTH"</span>
+              ]</span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тип платежа"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">checkout_url</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"адрес страницы Fondy IPSP для добавления новой карты"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">ipsp_id</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"идентификатор платежа в платежном шлюзе"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">ipsp_type</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"название IPSP через которых проводился платеж"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">amount</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"сумма платежа в копейках/центах без разделителей. 120 - 1 грн 20 коп"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">currency</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"валюта платежа"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">status</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">enum</span>": <span class="hljs-value">[
+                <span class="hljs-string">"CREATED"</span>,
+                <span class="hljs-string">"PROCESSING"</span>,
+                <span class="hljs-string">"DECLINED"</span>,
+                <span class="hljs-string">"APPROVED"</span>,
+                <span class="hljs-string">"EXPIRED"</span>,
+                <span class="hljs-string">"REVERSED"</span>,
+                <span class="hljs-string">"CREATED"</span>
+              ]</span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"статус транзакции"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">card</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
+              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"внутренний идентификатор карты в системе Palms"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">mask</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"маска номера карты (Fondy.masked_card)"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">bin</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"бин номер карты (Fondy.card_bin)"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">user_id</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"ID пользователя - владельца карты\n\n&lt;!-- + token: `da39a3ee5e6b4b0d3255bfef95601890afd80709` (string) - токен карты в IPSP (Fondy.rectoken) --&gt;"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">expires_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"время жизни карты (Fondy.rectoken_lifetime)"</span>
+                </span>}</span>,
+                "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
+                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата добавления карты\n\n&lt;!-- + deleted_at: `2019-08-10T00:00:00` (string) - дата удаления карты --&gt;"</span>
+                </span>}
+              </span>}</span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"карта с которой была проведена оплата"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">created_at</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата создание платежная"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дата совершения платежа"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"последняя дата обновления платежа"</span>
+            </span>}
+          </span>}
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -11009,7 +11466,8 @@
         <span class="hljs-string">"subscription"</span>,
         <span class="hljs-string">"user"</span>,
         <span class="hljs-string">"games_number"</span>,
-        <span class="hljs-string">"validity_period"</span>
+        <span class="hljs-string">"validity_period"</span>,
+        <span class="hljs-string">"payment"</span>
       ]</span>,
       "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>}
