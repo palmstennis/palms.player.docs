@@ -10421,7 +10421,22 @@
       "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
       "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
       "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
-    </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">is_valid</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
+        "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+        "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
+        "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+        "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
+      </span>}
+    ]
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -10582,6 +10597,13 @@
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"последняя дата обновления платежа"</span>
             </span>}
           </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">is_valid</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"типы зон бронирования"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -10593,7 +10615,9 @@
         <span class="hljs-string">"user"</span>,
         <span class="hljs-string">"games_number"</span>,
         <span class="hljs-string">"validity_period"</span>,
-        <span class="hljs-string">"payment"</span>
+        <span class="hljs-string">"payment"</span>,
+        <span class="hljs-string">"is_valid"</span>,
+        <span class="hljs-string">"area_types"</span>
       ]</span>,
       "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>}
@@ -10648,7 +10672,22 @@
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
         "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
-      </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">is_valid</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
+          "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+          "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
+          "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+          "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
+        </span>}
+      ]
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
@@ -10687,7 +10726,22 @@
         "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
         "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
         "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
-      </span>}
+      </span>}</span>,
+      "<span class="hljs-attribute">is_valid</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
+          "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+          "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
+        </span>},
+        {
+          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
+          "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+          "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
+        </span>}
+      ]
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -10878,6 +10932,13 @@
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"последняя дата обновления платежа"</span>
                 </span>}
               </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">is_valid</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"типы зон бронирования"</span>
             </span>}
           </span>}
         </span>},
@@ -11036,6 +11097,13 @@
                   "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"последняя дата обновления платежа"</span>
                 </span>}
               </span>}
+            </span>}</span>,
+            "<span class="hljs-attribute">is_valid</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"типы зон бронирования"</span>
             </span>}
           </span>}
         </span>}
@@ -11081,7 +11149,22 @@
       "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
       "<span class="hljs-attribute">processed_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span></span>,
       "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-08-10T00:00:00"</span>
-    </span>}
+    </span>}</span>,
+    "<span class="hljs-attribute">is_valid</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
+        "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+        "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
+      </span>},
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
+        "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+        "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
+      </span>}
+    ]
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -11242,6 +11325,13 @@
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"последняя дата обновления платежа"</span>
             </span>}
           </span>}
+        </span>}</span>,
+        "<span class="hljs-attribute">is_valid</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"типы зон бронирования"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
@@ -11253,7 +11343,9 @@
         <span class="hljs-string">"user"</span>,
         <span class="hljs-string">"games_number"</span>,
         <span class="hljs-string">"validity_period"</span>,
-        <span class="hljs-string">"payment"</span>
+        <span class="hljs-string">"payment"</span>,
+        <span class="hljs-string">"is_valid"</span>,
+        <span class="hljs-string">"area_types"</span>
       ]</span>,
       "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>}
