@@ -10386,38 +10386,10 @@
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-    "<span class="hljs-attribute">subscription</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-      "<span class="hljs-attribute">club_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
-      "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
-      "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
-      "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">[
-        {
-          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
-          "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-          "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
-        </span>},
-        {
-          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
-          "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-          "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
-        </span>}
-      ]</span>,
-      "<span class="hljs-attribute">day_weeks</span>": <span class="hljs-value">[
-        <span class="hljs-string">"1"</span>,
-        <span class="hljs-string">"2"</span>,
-        <span class="hljs-string">"3"</span>
-      ]</span>,
-      "<span class="hljs-attribute">hours</span>": <span class="hljs-value">[
-        <span class="hljs-string">"8"</span>,
-        <span class="hljs-string">"20"</span>
-      ]</span>,
-      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
-    </span>}</span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+    "<span class="hljs-attribute">club</span>": <span class="hljs-value"><span class="hljs-string">"Club"</span></span>,
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
+    "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"UAH"</span></span>,
     "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
@@ -10461,47 +10433,20 @@
         "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
         </span>}</span>,
-        "<span class="hljs-attribute">subscription</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">club_id</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">games_number</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количестко игр. При оплате будет вычитаться, при рефанде будет добавляться"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количство дней действительности абонемента"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"типы зон бронирования"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">day_weeks</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дни недели"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">hours</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"часы по которым абонемент действует"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">active</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
-            </span>}
-          </span>}</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"шаблон абонемента"</span>
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">club</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя клуба"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">currency</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"валюта"</span>
         </span>}</span>,
         "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -10641,7 +10586,10 @@
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
         <span class="hljs-string">"id"</span>,
-        <span class="hljs-string">"subscription"</span>,
+        <span class="hljs-string">"title"</span>,
+        <span class="hljs-string">"club"</span>,
+        <span class="hljs-string">"price"</span>,
+        <span class="hljs-string">"currency"</span>,
         <span class="hljs-string">"user"</span>,
         <span class="hljs-string">"games_number"</span>,
         <span class="hljs-string">"validity_period"</span>,
@@ -10665,38 +10613,10 @@
   "<span class="hljs-attribute">data</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">subscription</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-        "<span class="hljs-attribute">club_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-        "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
-        "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
-        "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
-        "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">[
-          {
-            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
-            "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-            "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
-          </span>},
-          {
-            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
-            "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-            "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
-          </span>}
-        ]</span>,
-        "<span class="hljs-attribute">day_weeks</span>": <span class="hljs-value">[
-          <span class="hljs-string">"1"</span>,
-          <span class="hljs-string">"2"</span>,
-          <span class="hljs-string">"3"</span>
-        ]</span>,
-        "<span class="hljs-attribute">hours</span>": <span class="hljs-value">[
-          <span class="hljs-string">"8"</span>,
-          <span class="hljs-string">"20"</span>
-        ]</span>,
-        "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
-      </span>}</span>,
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+      "<span class="hljs-attribute">club</span>": <span class="hljs-value"><span class="hljs-string">"Club"</span></span>,
+      "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
+      "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"UAH"</span></span>,
       "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
         "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
@@ -10732,38 +10652,10 @@
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">subscription</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-        "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-        "<span class="hljs-attribute">club_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-        "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
-        "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
-        "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
-        "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">[
-          {
-            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
-            "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-            "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
-          </span>},
-          {
-            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-            "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
-            "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-            "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
-          </span>}
-        ]</span>,
-        "<span class="hljs-attribute">day_weeks</span>": <span class="hljs-value">[
-          <span class="hljs-string">"1"</span>,
-          <span class="hljs-string">"2"</span>,
-          <span class="hljs-string">"3"</span>
-        ]</span>,
-        "<span class="hljs-attribute">hours</span>": <span class="hljs-value">[
-          <span class="hljs-string">"8"</span>,
-          <span class="hljs-string">"20"</span>
-        ]</span>,
-        "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
-      </span>}</span>,
+      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+      "<span class="hljs-attribute">club</span>": <span class="hljs-value"><span class="hljs-string">"Club"</span></span>,
+      "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
+      "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"UAH"</span></span>,
       "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
         "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
@@ -10837,47 +10729,20 @@
             "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
             </span>}</span>,
-            "<span class="hljs-attribute">subscription</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">club_id</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">games_number</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количестко игр. При оплате будет вычитаться, при рефанде будет добавляться"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количство дней действительности абонемента"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"типы зон бронирования"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">day_weeks</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дни недели"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">hours</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"часы по которым абонемент действует"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">active</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
-                </span>}
-              </span>}</span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"шаблон абонемента"</span>
+            "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">club</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя клуба"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">currency</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"валюта"</span>
             </span>}</span>,
             "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -11022,47 +10887,20 @@
             "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
             </span>}</span>,
-            "<span class="hljs-attribute">subscription</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-              "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-                "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">club_id</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">games_number</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количестко игр. При оплате будет вычитаться, при рефанде будет добавляться"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количство дней действительности абонемента"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"типы зон бронирования"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">day_weeks</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дни недели"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">hours</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-                  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"часы по которым абонемент действует"</span>
-                </span>}</span>,
-                "<span class="hljs-attribute">active</span>": <span class="hljs-value">{
-                  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
-                </span>}
-              </span>}</span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"шаблон абонемента"</span>
+            "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">club</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя клуба"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">currency</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"валюта"</span>
             </span>}</span>,
             "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -11208,38 +11046,10 @@
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Authorization</span>: <span class="hljs-string">Bearer XXXXX</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-    "<span class="hljs-attribute">subscription</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-      "<span class="hljs-attribute">club_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
-      "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
-      "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
-      "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">[
-        {
-          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
-          "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-          "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
-        </span>},
-        {
-          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-          "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Somestring"</span></span>,
-          "<span class="hljs-attribute">value</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-          "<span class="hljs-attribute">logo</span>": <span class="hljs-value"><span class="hljs-string">"https://foo.bar/some.img"</span>
-        </span>}
-      ]</span>,
-      "<span class="hljs-attribute">day_weeks</span>": <span class="hljs-value">[
-        <span class="hljs-string">"1"</span>,
-        <span class="hljs-string">"2"</span>,
-        <span class="hljs-string">"3"</span>
-      ]</span>,
-      "<span class="hljs-attribute">hours</span>": <span class="hljs-value">[
-        <span class="hljs-string">"8"</span>,
-        <span class="hljs-string">"20"</span>
-      ]</span>,
-      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
-    </span>}</span>,
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
+    "<span class="hljs-attribute">club</span>": <span class="hljs-value"><span class="hljs-string">"Club"</span></span>,
+    "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
+    "<span class="hljs-attribute">currency</span>": <span class="hljs-value"><span class="hljs-string">"UAH"</span></span>,
     "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">phone_number</span>": <span class="hljs-value"><span class="hljs-string">"+380938765432"</span></span>,
@@ -11283,47 +11093,20 @@
         "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
         </span>}</span>,
-        "<span class="hljs-attribute">subscription</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
-          "<span class="hljs-attribute">properties</span>": <span class="hljs-value">{
-            "<span class="hljs-attribute">id</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">club_id</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">games_number</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количестко игр. При оплате будет вычитаться, при рефанде будет добавляться"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"количство дней действительности абонемента"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">area_types</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"типы зон бронирования"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">day_weeks</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"дни недели"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">hours</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"array"</span></span>,
-              "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"часы по которым абонемент действует"</span>
-            </span>}</span>,
-            "<span class="hljs-attribute">active</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
-            </span>}
-          </span>}</span>,
-          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"шаблон абонемента"</span>
+        "<span class="hljs-attribute">title</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">club</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"имя клуба"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">currency</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
+          "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"валюта"</span>
         </span>}</span>,
         "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"object"</span></span>,
@@ -11463,7 +11246,10 @@
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
         <span class="hljs-string">"id"</span>,
-        <span class="hljs-string">"subscription"</span>,
+        <span class="hljs-string">"title"</span>,
+        <span class="hljs-string">"club"</span>,
+        <span class="hljs-string">"price"</span>,
+        <span class="hljs-string">"currency"</span>,
         <span class="hljs-string">"user"</span>,
         <span class="hljs-string">"games_number"</span>,
         <span class="hljs-string">"validity_period"</span>,
