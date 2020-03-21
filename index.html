@@ -9454,7 +9454,7 @@
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-      "<span class="hljs-attribute">club_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">club</span>": <span class="hljs-value"><span class="hljs-string">"Palms Club"</span></span>,
       "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
       "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
       "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
@@ -9481,12 +9481,14 @@
         <span class="hljs-string">"8"</span>,
         <span class="hljs-string">"20"</span>
       ]</span>,
-      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">color</span>": <span class="hljs-value"><span class="hljs-string">"#D3343B"</span></span>,
+      "<span class="hljs-attribute">trainer_included</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
     </span>},
     {
       "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
       "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-      "<span class="hljs-attribute">club_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+      "<span class="hljs-attribute">club</span>": <span class="hljs-value"><span class="hljs-string">"Palms Club"</span></span>,
       "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
       "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
       "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
@@ -9513,7 +9515,9 @@
         <span class="hljs-string">"8"</span>,
         <span class="hljs-string">"20"</span>
       ]</span>,
-      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+      "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+      "<span class="hljs-attribute">color</span>": <span class="hljs-value"><span class="hljs-string">"#D3343B"</span></span>,
+      "<span class="hljs-attribute">trainer_included</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
@@ -9559,8 +9563,8 @@
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
             </span>}</span>,
-            "<span class="hljs-attribute">club_id</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+            "<span class="hljs-attribute">club</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
             </span>}</span>,
             "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
@@ -9586,6 +9590,12 @@
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"часы по которым абонемент действует"</span>
             </span>}</span>,
             "<span class="hljs-attribute">active</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">color</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">trainer_included</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
             </span>}
           </span>}
@@ -9600,8 +9610,8 @@
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
               "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
             </span>}</span>,
-            "<span class="hljs-attribute">club_id</span>": <span class="hljs-value">{
-              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+            "<span class="hljs-attribute">club</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
             </span>}</span>,
             "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
@@ -9628,6 +9638,12 @@
             </span>}</span>,
             "<span class="hljs-attribute">active</span>": <span class="hljs-value">{
               "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">color</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+            </span>}</span>,
+            "<span class="hljs-attribute">trainer_included</span>": <span class="hljs-value">{
+              "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
             </span>}
           </span>}
         </span>}
@@ -9639,7 +9655,7 @@
   "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
     "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"somestring"</span></span>,
-    "<span class="hljs-attribute">club_id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+    "<span class="hljs-attribute">club</span>": <span class="hljs-value"><span class="hljs-string">"Palms Club"</span></span>,
     "<span class="hljs-attribute">price</span>": <span class="hljs-value"><span class="hljs-number">50000</span></span>,
     "<span class="hljs-attribute">games_number</span>": <span class="hljs-value"><span class="hljs-number">10</span></span>,
     "<span class="hljs-attribute">validity_period</span>": <span class="hljs-value"><span class="hljs-number">365</span></span>,
@@ -9666,7 +9682,9 @@
       <span class="hljs-string">"8"</span>,
       <span class="hljs-string">"20"</span>
     ]</span>,
-    "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
+    "<span class="hljs-attribute">active</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+    "<span class="hljs-attribute">color</span>": <span class="hljs-value"><span class="hljs-string">"#D3343B"</span></span>,
+    "<span class="hljs-attribute">trainer_included</span>": <span class="hljs-value"><span class="hljs-literal">true</span>
   </span>}
 </span>}</code></pre><div style="height: 1px;"></div><h5>Schema</h5><pre><code>{
   "<span class="hljs-attribute">$schema</span>": <span class="hljs-value"><span class="hljs-string">"http://json-schema.org/draft-04/schema#"</span></span>,
@@ -9682,8 +9700,8 @@
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span></span>,
           "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"тайтл"</span>
         </span>}</span>,
-        "<span class="hljs-attribute">club_id</span>": <span class="hljs-value">{
-          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
+        "<span class="hljs-attribute">club</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
         </span>}</span>,
         "<span class="hljs-attribute">price</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"number"</span>
@@ -9710,19 +9728,27 @@
         </span>}</span>,
         "<span class="hljs-attribute">active</span>": <span class="hljs-value">{
           "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">color</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"string"</span>
+        </span>}</span>,
+        "<span class="hljs-attribute">trainer_included</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"boolean"</span>
         </span>}
       </span>}</span>,
       "<span class="hljs-attribute">required</span>": <span class="hljs-value">[
         <span class="hljs-string">"id"</span>,
         <span class="hljs-string">"title"</span>,
-        <span class="hljs-string">"club_id"</span>,
+        <span class="hljs-string">"club"</span>,
         <span class="hljs-string">"price"</span>,
         <span class="hljs-string">"games_number"</span>,
         <span class="hljs-string">"validity_period"</span>,
         <span class="hljs-string">"area_types"</span>,
         <span class="hljs-string">"day_weeks"</span>,
         <span class="hljs-string">"hours"</span>,
-        <span class="hljs-string">"active"</span>
+        <span class="hljs-string">"active"</span>,
+        <span class="hljs-string">"color"</span>,
+        <span class="hljs-string">"trainer_included"</span>
       ]</span>,
       "<span class="hljs-attribute">additionalProperties</span>": <span class="hljs-value"><span class="hljs-literal">false</span>
     </span>}
